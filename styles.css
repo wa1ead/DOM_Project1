@@ -1,0 +1,42 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  border: solid 1px black;
+  border-radius: 2rem 0 0 0;
+  background-color: gray;
+  margin-left: 60%
+}
+.heading{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  align-self: center;
+}
+
+
+.details{
+  display: flex;
+}
