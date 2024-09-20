@@ -36,27 +36,39 @@ body {
 
 .item-quantity {
   display: flex;
-}
-
-
-span {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  } */
+}*/
 
 table {
   width: 100%;
 }
 
-table th{
+table thead th{
   border-bottom: solid 1px white;
   padding: 0.5rem 0;
+  font-size: large;
+  font-weight: 500;
 }
 
-table td{
+table tbody td{
   border-bottom: solid 1px white;
   padding: 1rem;
+}
+
+table tfoot th, td{
+  padding-top: 2rem
+}
+
+table tfoot th{
+  text-align: left;
+  font-weight: 500;
+  font-size: large;
+}
+
+table tfoot td{
+  text-align: center;
+  font-size: medium;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 .item-infos {
@@ -71,14 +83,21 @@ img {
   background-position: center;
 }
 
+h3{
+  font-size:larger;
+  font-weight: 400
+}
+
 p {
   font-size: small;
   letter-spacing: 2px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 input{
   width: 2rem;
+  font-weight: 700;
+  font-size: small;
 }
 
 button {
