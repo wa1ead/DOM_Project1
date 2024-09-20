@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: sans-serif
+  font-family: sans-serif;
 }
 
 .cart {
@@ -14,60 +14,92 @@ body {
   border: solid 1px black;
   border-radius: 2rem 0 0 0;
   background-color: gray;
-  margin-left: 60%
+  margin-left: 60%;
 }
-.heading{
+.heading {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-.item{
+/* .item {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-button{
-  background-color: transparent;
-  border: solid 1px white;
-  border-radius: 20px;
-  width: 2rem;
-  padding: 0.5rem;
-  margin: 1rem;
-  cursor: pointer;
-  text-align: center;
-  align-self: center;
-}
-
-button:hover{
-  background-color: white;
-}
-
-.details{
+.item-infos {
   display: flex;
 }
 
-.item-value{
+.item-quantity {
   display: flex;
 }
 
-p{
+
+span {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  } */
+
+table {
+  width: 100%;
+}
+
+table th{
+  border-bottom: solid 1px white;
+  padding: 0.5rem 0;
+}
+
+table td{
+  border-bottom: solid 1px white;
+  padding: 1rem;
+}
+
+.item-infos {
+  display: flex;
+  gap: 0.5rem;
+}
+
+img {
+  width: 4rem;
+  height: auto;
+  border-radius: 10px;
+  background-position: center;
+}
+
+p {
   font-size: small;
   letter-spacing: 2px;
   font-weight: 300;
 }
 
-img{
-  width: 6rem;
-  height: auto;
-  background-position: center;
+input{
+  width: 2rem;
 }
 
-span{
-  position: fixed;
-  bottom: 0;
-  right: 0;
+button {
+  background-color: transparent;
+  border: solid 1px white;
+  border-radius: 20px;
+  width: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  align-self: center;
+}
+
+button:hover {
+  background-color: white;
+}
+
+.delete{
+  border: solid 1px red;
+}
+
+.delete:hover {
+  background-color: red;
 }
