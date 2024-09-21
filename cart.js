@@ -1,9 +1,9 @@
-var decrementButton = document.getElementsByClassName("dec");
-console.log(decrementButton);
-for (let i = 0; i < decrementButton.length; i++) {
-  var button = decrementButton[i];
-  button.addEventListener("click", function (event) {
-    var buttonDec = event.target;
-    buttonDec.parentElement.parentElement.parentElement.remove();
-  });
-}
+var cartContainer = document.querySelectorAll(".cart-items");
+console.log(cartContainer);
+var cartItem = document.getElementsByClassName("cart-item");
+console.log(cartItem);
+Array.from(cartItem).forEach((item) => {
+  console.log(item);
+  var price = item.querySelector(".item-price p").textContent;
+  console.log(price);
+});
