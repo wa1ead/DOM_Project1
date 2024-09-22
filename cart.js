@@ -1,16 +1,32 @@
-var cartItem = document.getElementsByClassName("cart-item");
-cartItemArray = Array.from(cartItem);
-var total = 0;
+if (document.readyState == "loading") {
+  document.addEventListener("DOMContentLoaded", ready);
+} else {
+  ready();
+}
 
-cartItemArray.forEach((item) => {
-  console.log(item);
-  var price = Number(
-    item.querySelector(".item-price p").textContent.replace("$", "")
-  );
-  console.log(price);
-  var quantity = item.querySelector(".item-quantity input").value;
-  console.log(quantity);
-  total += price * quantity;
+function ready() {
+  var cartItem = document.getElementsByClassName("cart-item");
+  var cartItemArray = Array.from(cartItem);
+  console.log(cartItemArray);
+  updateTotal()
+}
+
+function updateTotal() {
+  var total = 0;
+
+  cartItemArray.forEach((item) => {
+    console.log(item);
+    var priceElement = item.querySelector(".item-price p").textContent;
+    var price = Number(priceElement.replace("$", ""));
+    console.log(price);
+    var quantityElement = item.querySelector(".item-quantity input");
+    var quantity = quantityElement.value;
+    console.log(quantity);
+    total += price * quantity;
+    console.log(total);
+  });
+  document.getElementsByClassName("total-price").textContent = total;
   console.log(total);
-});
-document.getElementsByClassName("total-price").textContent = total;
+}
+
+cartItemArray.forEach((item) => {});
