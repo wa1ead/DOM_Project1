@@ -4,14 +4,17 @@ if (document.readyState == "loading") {
   ready();
 }
 
+
 function ready() {
-  var cartItem = document.getElementsByClassName("cart-item");
-  var cartItemArray = Array.from(cartItem);
-  console.log(cartItemArray);
+  attachQuantityListeners();
   updateTotal()
 }
 
+
 function updateTotal() {
+  var cartItem = document.getElementsByClassName("cart-item");
+  var cartItemArray = Array.from(cartItem);
+  console.log(cartItemArray);
   var total = 0;
 
   cartItemArray.forEach((item) => {
@@ -25,8 +28,19 @@ function updateTotal() {
     total += price * quantity;
     console.log(total);
   });
-  document.getElementsByClassName("total-price").textContent = total;
+  document.getElementsByClassName("total-price")[0].textContent = `$${total}`;
   console.log(total);
 }
+// Attach event listeners to update the total when quantity changes
+const attachQuantityListeners = () => {
+  var cartItem = document.getElementsByClassName("cart-item");
+  var cartItemArray = Array.from(cartItem);
 
-cartItemArray.forEach((item) => {});
+  cartItemArray.forEach((item) => {
+    // Get the quantity input
+    var quantityInput = item.querySelector(".item-quantity input");
+
+    // Add event listener to recalculate the total on quantity change
+    quantityInput.addEventListener('input', updateTotal);
+  });
+};
