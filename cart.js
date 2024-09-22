@@ -42,7 +42,7 @@ const attachQuantityListeners = () => {
     // Get the quantity input
     var quantityInput = item.querySelector(".item-quantity input");
 
-    // Add event listener to recalculate the total on quantity change
+    // Recalculate the total on quantity change
     quantityInput.addEventListener("input", calculateTotal);
   });
 };
@@ -55,7 +55,9 @@ const deleteItem = () => {
   cartItemArray.forEach((item) => {
     const deleteButton = item.querySelector(".delete");
     deleteButton.addEventListener("click", () => {
-      item.remove(); // Removes the cart item row
+      // Removes the cart item row
+      item.remove();
+      // Recalculate the total on item remove
       calculateTotal();
       console.log("Item removed");
     });
