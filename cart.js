@@ -4,14 +4,14 @@ if (document.readyState == "loading") {
   ready();
 }
 
-
 function ready() {
   attachQuantityListeners();
-  updateTotal()
+  deleteItem();
+  calculateTotal();
 }
 
-
-function updateTotal() {
+// Calculate the total price
+const calculateTotal = () => {
   var cartItem = document.getElementsByClassName("cart-item");
   var cartItemArray = Array.from(cartItem);
   console.log(cartItemArray);
@@ -25,13 +25,15 @@ function updateTotal() {
     var quantityElement = item.querySelector(".item-quantity input");
     var quantity = quantityElement.value;
     console.log(quantity);
+    // Calculate the total based on items price and quantity
     total += price * quantity;
     console.log(total);
   });
   document.getElementsByClassName("total-price")[0].textContent = `$${total}`;
   console.log(total);
-}
-// Attach event listeners to update the total when quantity changes
+};
+
+// Update the total when quantity changes
 const attachQuantityListeners = () => {
   var cartItem = document.getElementsByClassName("cart-item");
   var cartItemArray = Array.from(cartItem);
@@ -41,6 +43,21 @@ const attachQuantityListeners = () => {
     var quantityInput = item.querySelector(".item-quantity input");
 
     // Add event listener to recalculate the total on quantity change
-    quantityInput.addEventListener('input', updateTotal);
+    quantityInput.addEventListener("input", calculateTotal);
+  });
+};
+
+// Delete items from cart
+const deleteItem = () => {
+  var cartItem = document.getElementsByClassName("cart-item");
+  var cartItemArray = Array.from(cartItem);
+
+  cartItemArray.forEach((item) => {
+    const deleteButton = item.querySelector(".delete");
+    deleteButton.addEventListener("click", () => {
+      item.remove(); // Removes the cart item row
+      calculateTotal();
+      console.log("Item removed");
+    });
   });
 };
