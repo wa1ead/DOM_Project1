@@ -65,7 +65,7 @@ table tfoot th{
 }
 
 table tfoot td{
-  text-align: center;
+  text-align: end;
   font-size: medium;
   letter-spacing: 2px;
   font-weight: 400;

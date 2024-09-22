@@ -1,5 +1,6 @@
 var cartItem = document.getElementsByClassName("cart-item");
 cartItemArray = Array.from(cartItem);
+var total = 0;
 
 cartItemArray.forEach((item) => {
   console.log(item);
@@ -9,6 +10,7 @@ cartItemArray.forEach((item) => {
   console.log(price);
   var quantity = item.querySelector(".item-quantity input").value;
   console.log(quantity);
-  var total = price * quantity;
+  total += price * quantity;
   console.log(total);
 });
+document.getElementsByClassName("total-price").textContent = total;
