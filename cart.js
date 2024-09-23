@@ -15,23 +15,27 @@ function ready() {
 const calculateTotal = () => {
   var cartItem = document.getElementsByClassName("cart-item");
   var cartItemArray = Array.from(cartItem);
-  console.log(cartItemArray);
+  // console.log(cartItemArray);
+  
   var total = 0;
 
   cartItemArray.forEach((item) => {
-    console.log(item);
+    // console.log(item);
+
     var priceElement = item.querySelector(".item-price p").textContent;
     var price = Number(priceElement.replace("$", ""));
-    console.log(price);
+    // console.log(price);
+
     var quantityElement = item.querySelector(".item-quantity input");
     var quantity = quantityElement.value;
-    console.log(quantity);
+    // console.log(quantity);
+
     // Calculate the total based on items price and quantity
     total += price * quantity;
-    console.log(total);
+    // console.log(total);
   });
   document.getElementsByClassName("total-price")[0].textContent = `$${total}`;
-  console.log(total);
+  // console.log(total);
 };
 
 // Update the total when quantity changes
@@ -55,13 +59,15 @@ const deleteItem = () => {
 
   cartItemArray.forEach((item) => {
     const deleteButton = item.querySelector(".delete");
-    console.log(deleteButton);
+    // console.log(deleteButton);
+
     deleteButton.addEventListener("click", () => {
       // Removes the cart item row
       item.remove();
+
       // Recalculate the total on item remove
       calculateTotal();
-      console.log("Item removed");
+      // console.log("Item removed");
     });
   });
 };
