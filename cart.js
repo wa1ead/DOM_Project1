@@ -5,9 +5,10 @@ if (document.readyState == "loading") {
 }
 
 function ready() {
+  calculateTotal();
   attachQuantityListeners();
   deleteItem();
-  calculateTotal();
+  addToFavorites();
 }
 
 // Calculate the total price
@@ -54,12 +55,31 @@ const deleteItem = () => {
 
   cartItemArray.forEach((item) => {
     const deleteButton = item.querySelector(".delete");
+    console.log(deleteButton);
     deleteButton.addEventListener("click", () => {
       // Removes the cart item row
       item.remove();
       // Recalculate the total on item remove
       calculateTotal();
       console.log("Item removed");
+    });
+  });
+};
+
+// Add item to favorites
+const addToFavorites = () => {
+  var cartItem = document.getElementsByClassName("cart-item");
+  var cartItemArray = Array.from(cartItem);
+
+  cartItemArray.forEach((item) => {
+    const favoriteButton = item.querySelector(".love");
+    console.log(favoriteButton);
+    favoriteButton.addEventListener("click", () => {
+      // Select the favorite button icon
+      var favoriteIcon = favoriteButton.querySelector(".fa-regular");
+      console.log(favoriteIcon);
+      // Change the icon to onClick
+      favoriteIcon.classList.replace("fa-regular", "fa-solid");
     });
   });
 };
