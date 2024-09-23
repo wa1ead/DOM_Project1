@@ -73,11 +73,13 @@ const addToFavorites = () => {
 
   cartItemArray.forEach((item) => {
     const favoriteButton = item.querySelector(".love");
-    console.log(favoriteButton);
+    // console.log(favoriteButton);
+
     favoriteButton.addEventListener("click", () => {
       // Select the favorite button icon
       var favoriteIcon = favoriteButton.querySelector(".fa-regular");
-      console.log(favoriteIcon);
+      // console.log(favoriteIcon);
+
       // Change the icon to onClick
       favoriteIcon.classList.replace("fa-regular", "fa-solid");
     });
